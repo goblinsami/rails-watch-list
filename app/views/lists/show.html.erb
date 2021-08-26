@@ -1,0 +1,27 @@
+<div class="container my-5 bg-white">
+  <div class="banner container-fluid d-flex justify-content-center align-items-center">
+    <div class="text-center">
+        <h2 class="text-white"> <%= @list.name %></h2>
+    </div>
+  </div>
+
+<div class="row justify-content-around m-0">
+  <% @list.bookmarks.each do |bookmark| %>
+<div class="card m-5 shadow p-3" style="width: 250px">
+     <h3> <%= bookmark.movie.title %> </h3>
+     <hr>
+     <p> <%= bookmark.comment %></p>
+       <div class="image-top d-flex justify-content-center mx-0">
+      <% @url = "https://picsum.photos/230/90?random=#{@seed}" %>
+<% @seed= rand(0..699) %>
+      <img class="list-image" src=<%="#{@url}"%> alt="">
+      </div>
+       <%# end of card %>
+    </div>
+  <% end %>
+  <%# end of row %>
+</div>
+<%= link_to '+ Create NEW BOOKMARK',  new_list_bookmark_path(@list) , class:"btn btn-outline-secondary" %>
+<%= link_to '+ Back',  lists_path(@list) , class:"btn btn-outline-secondary" %>
+<%# end of container  %>
+</div>

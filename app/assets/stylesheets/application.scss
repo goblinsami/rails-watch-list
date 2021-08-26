@@ -1,0 +1,31 @@
+// Graphical variables
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variables";
+
+// External libraries
+@import "bootstrap/scss/bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// Your CSS partials
+// @import "components/index";
+// @import "pages/index";
+.banner {
+  height: 350px;
+    background-image: linear-gradient(120deg, rgba(0,0,0,0.4) 20%, rgba(0,0,0,0.7) 50%), url(https://pixabay.com/get/gd133f43de7808e59442d509cedf9cea0983fc26ab19c8c532c3b4a97c14a3711762e90eac960c3fcf7824664839aba7d_1920.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.banner {
+
+}
+
+.body {
+  margin: 0;
+}
+
+.list-image {
+width: 100%;
+object-fit: cover;
+}

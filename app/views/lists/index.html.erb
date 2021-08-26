@@ -1,0 +1,31 @@
+  <div class="banner container-fluid d-flex justify-content-center align-items-center">
+    <div class="text-center">
+      <h1 class="text-white text-center">LISTS DIRECTORY</h1>
+      <h3 class="text-white">Just watch the movie, already</h3>
+      <%= link_to '+ Create a New List', new_list_path, class:"btn btn-outline-light" %>
+    </div>
+  </div>
+<%# <div class="container my-5 bg-transparent px-0"> %>
+
+
+  <div class="row m-0 g-2 mx-0 justify-content-center my-5">
+
+    <% @lists.each do |list| %>
+      <div class="card m-0 p-0 mx-1 bg-white" style="width: 20%">
+      <div class="image-top d-flex justify-content-center mx-0">
+      <% @url = "https://picsum.photos/230/90?random=#{@seed}" %>
+<% @seed= rand(0..699) %>
+      <img class="list-image" src=<%="#{@url}"%> alt="">
+      </div>
+        <div class="card-body">
+        <%= link_to list_path(list) do%>
+        <%= list.name %>
+        <% end %>
+    </div>
+         <%# end of card %>
+      </div>
+      <% end %>
+    <%# end of row %>
+  </div>
+<%# end of container %>
+<%# </div> %>
