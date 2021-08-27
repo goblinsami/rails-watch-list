@@ -1,9 +1,22 @@
-<div class="container p-5">
-<h1>Create new list</h1>
+<div class="container  bg-white my-5 px-0">
+  <div class="container mb-3">
+  <div class="form-container container">
+    <div class="header d-flex justify-content-between align-items-center pt-5">
+      <h2>Create new list</h2>
+      <%= link_to '+ Back',  lists_path(@list) , class:"btn btn-outline-secondary" %>
+  </div>
 
-<%= simple_form_for [@list] do |f| %>
-  <%= f.input :name %>
-  <%= f.submit class: "btn btn-primary" %>
-<% end %>
+    <%= simple_form_for [@list] do |f| %>
+    <%= f.input :name, class: "w-30" %>
+    <%= f.submit class: "btn btn-primary text-center" %>
+    <% end %>
 
+  </div>
+  </div>
+
+
+
+  <% @url = "https://picsum.photos/800/200?random=#{@seed}" %>
+  <% @seed= rand(0..699) %>
+  <img class="w-100 h-50" src=<%="#{@url}"%> alt="">
 </div>

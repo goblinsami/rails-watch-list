@@ -23,13 +23,13 @@ end
 def destroy
   @list = List.find(params[:id])
   @list.destroy
-  # redirect_to tasks_path
+  redirect_to lists_path
 end
 
   private
 
   def list_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :list_id)
   end
 
 end

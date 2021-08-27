@@ -17,9 +17,7 @@
   background-size: cover;
   background-position: center;
 }
-.banner {
 
-}
 
 .body {
   margin: 0;
@@ -28,4 +26,20 @@
 .list-image {
 width: 100%;
 object-fit: cover;
+}
+
+.card a {
+  text-decoration: none!important;
+  color: gray;
+  font-weight: bold;
+
+  &:hover {
+    color: gold;
+}
+}
+
+.form-container {
+  padding-left: 250px;
+    padding-right: 250px;
+
 }

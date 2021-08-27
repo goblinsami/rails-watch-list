@@ -1,12 +1,18 @@
 <div class="container p-5">
 
 <h3>New Movie</h3>
-
+<div class="container">
 <%= simple_form_for [@list, @bookmark] do |f| %>
   <%= f.input :comment %>
   <%= f.association :movie %>
   <%= f.submit class: "btn btn-primary" %>
 <% end %>
+
+<% @url = "https://picsum.photos/230/90?random=#{@seed}" %>
+        <% @seed= rand(0..699) %>
+      <img class="" src=<%="#{@url}"%> alt="">
+
+</div>
 
 
 </div>
