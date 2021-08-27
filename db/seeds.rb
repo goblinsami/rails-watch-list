@@ -7,18 +7,18 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-50.times do
+puts "Destroying DB...."
+
+List.destroy_all
+Movie.destroy_all
+
+puts "Creating movies..."
+10.times do
   movie = Movie.new(
-    title:    Faker::Movies::LordOfTheRings.character,
+    title:    Faker::Movies::LordOfTheRings.unique.character,
     overview: Faker::Movies::LordOfTheRings.location,
     poster_url: "https://picsum.photos/300/500"
   )
   movie.save!
-end
-
-3.times do
-  list = List.new(
-    name: "Classical Movies"
-  )
-  list.save!
+  puts "#{movie.title}"
 end

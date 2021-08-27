@@ -8,6 +8,7 @@
 
     <%= simple_form_for [@list] do |f| %>
     <%= f.input :name, class: "w-30" %>
+    <%= f.input :photo, as: :file %>
     <%= f.submit class: "btn btn-outline-secondary text-center" %>
     <% end %>
 

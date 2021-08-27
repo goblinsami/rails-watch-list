@@ -11,11 +11,9 @@
   <div class="row m-0 g-2 mx-0 justify-content-center my-5">
 
     <% @lists.each do |list| %>
-      <div class="card m-0 p-0 mx-1 my-1 bg-white" style="width: 20%">
+      <div class="card m-0 p-0 mx-1 my-1 bg-white" style="width: 380px">
       <div class="image-top d-flex justify-content-center mx-0">
-      <% @url = "https://picsum.photos/230/90?random=#{@seed}" %>
-        <% @seed= rand(0..699) %>
-      <img class="list-image" src=<%="#{@url}"%> alt="">
+        <%= cl_image_tag list.photo.key, height: 200, width: 380, crop: :fill %>
       </div>
         <div class="card-body d-flex justify-content-between">
         <%= link_to list_path(list) do%>
@@ -35,3 +33,4 @@
   </div>
 <%# end of container %>
 <%# </div> %>
+<%# <%= cl_image_tag("vw9sz8rwwr3iqadchwzq", width: 400, height: 300, crop: :fill) %>
