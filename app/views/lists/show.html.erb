@@ -2,6 +2,7 @@
   <div class="banner container-fluid d-flex justify-content-center align-items-center">
     <div class="text-center">
         <h2 class="text-white"> <%= @list.name %></h2>
+        <%= link_to '+ Create NEW BOOKMARK',  new_list_bookmark_path(@list) , class:"btn btn-outline-light" %>
     </div>
   </div>
 
@@ -13,15 +14,28 @@
 <% @seed= rand(0..699) %>
       <img class="list-image" src=<%="#{@url}"%> alt="">
       </div>
-      <h4> <%= bookmark.movie.title %> </h4>
-     <hr>
-     <p> <%= bookmark.comment %></p>
+
+<div class="d-flex justify-content-between align-items-center px-3">
+
+  <h4 class="pt-3"> <%= bookmark.movie.title %> </h4>
+
+<%= link_to bookmark_path(bookmark),
+        method: :delete,
+        data: { confirm: "Are you sure?" } do  %>
+<i class="far fa-trash-alt"></i>
+<% end %>
+</div>
+
+
+
+     <hr class="m-0">
+     <p class="px-3 pt-2"> <%= bookmark.comment %></p>
        <%# end of card %>
     </div>
   <% end %>
   <%# end of row %>
 </div>
-<%= link_to '+ Create NEW BOOKMARK',  new_list_bookmark_path(@list) , class:"btn btn-outline-secondary" %>
+
 <%= link_to '+ Back',  lists_path(@list) , class:"btn btn-outline-secondary" %>
 <%# end of container  %>
 </div>

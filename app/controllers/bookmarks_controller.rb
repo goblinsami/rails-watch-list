@@ -30,7 +30,7 @@ def destroy
   @bookmark = Bookmark.find(params[:id])
   @bookmark.destroy
 
-  # redirect_to tasks_path
+  redirect_to list_path(@bookmark.list)
 end
 
    private
